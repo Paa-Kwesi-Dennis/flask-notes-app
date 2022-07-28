@@ -13,7 +13,7 @@ def home():
         note = request.form.get('note')
 
         if len(note) < 1:
-            flash('Note is too short!', category='error')
+            flash('Note is can not be empty or null!', category='error')
         else:
             new_note = Note(data=note, user_id = current_user.id)
             db.session.add(new_note)
